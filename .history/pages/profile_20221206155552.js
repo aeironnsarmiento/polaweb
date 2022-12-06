@@ -33,7 +33,7 @@ export default function SignIn({ providers }) {
   const email = useRef(null);
   const date = useRef(null);
 
-  const updateProfile = async () => {
+  const uploadPost = async () => {
     const docRef = await addDoc(collection(db, "user"), {
       username: session.user.username,
       email: email.current.value,
@@ -56,7 +56,7 @@ export default function SignIn({ providers }) {
         <div className="flex flex-col items-center">
           <div>
             <button
-              className="p-3 bg-gray-800 rounded-lg text-white hover:scale-125 transition-all duration-150 ease-out"
+              className="p-3 bg-gray-800 rounded-lg text-white"
               onClick={() => signOut({ callbackUrl: "/" })}
             >
               Sign out
@@ -80,7 +80,6 @@ export default function SignIn({ providers }) {
           <input
             type="text"
             placeholder="Email"
-            ref={email}
             className="bg-gray-100 text-sm text-gray-600 placeholder-gray-400 rounded-full h-12 w-64 pl-5 focus:border-black"
           />
         </div>
@@ -91,7 +90,6 @@ export default function SignIn({ providers }) {
           <input
             type="text"
             placeholder="Date of Birth"
-            ref={date}
             className="bg-gray-100 text-sm text-gray-600 placeholder-gray-400 rounded-full h-12 w-64 pl-5 focus:border-black"
           />
         </div>
@@ -100,8 +98,8 @@ export default function SignIn({ providers }) {
       <div className="flex flex-col items-center p-5">
         <div>
           <button
-            className="px-8 py-3 bg-gray-800 rounded-lg text-white hover:scale-125 transition-all duration-150 ease-out"
-            onClick={updateProfile}
+            className="px-8 py-3 bg-gray-800 rounded-lg text-white"
+            onClick={() => signOut({ callbackUrl: "/" })}
           >
             Save
           </button>

@@ -56,7 +56,7 @@ export default function SignIn({ providers }) {
         <div className="flex flex-col items-center">
           <div>
             <button
-              className="p-3 bg-gray-800 rounded-lg text-white hover:scale-125 transition-all duration-150 ease-out"
+              className="p-3 bg-gray-800 rounded-lg text-white"
               onClick={() => signOut({ callbackUrl: "/" })}
             >
               Sign out
@@ -100,7 +100,7 @@ export default function SignIn({ providers }) {
       <div className="flex flex-col items-center p-5">
         <div>
           <button
-            className="px-8 py-3 bg-gray-800 rounded-lg text-white hover:scale-125 transition-all duration-150 ease-out"
+            className="px-8 py-3 bg-gray-800 rounded-lg text-white"
             onClick={updateProfile}
           >
             Save
